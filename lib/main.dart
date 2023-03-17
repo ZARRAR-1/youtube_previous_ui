@@ -30,9 +30,14 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -82,88 +87,131 @@ class HomePage extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(right: 10.0),
             child: GestureDetector(
-                onTap: () {
-                  /* Code Behaviour Here*/
-                },
-                child: CircleAvatar(
-                  child: FittedBox(child: Image.asset('images/MiCard-pic.jpg')),
-                )),
+              onTap: () {
+                /* Code Behaviour Here*/
+              },
+              child: CircleAvatar(
+                backgroundImage: AssetImage('images/MiCard-pic.jpg'),
+                backgroundColor: Colors.blue,
+                radius: 16.0,
+              ),
+            ),
           ),
         ],
         backgroundColor: Colors.white,
       ),
-      body: ListView(
+      body: Column(
+        //REMOVED LIST VIEW from here
         children: [
-          Column(
+          SizedBox(
+            height: 8,
+          ),
+          Row(
             children: [
-              Row(
-                children: [
-                  SizedBox(
-                    height: 50,
-                    width: 200,
-                    child: Card(
-                      child: Center(child: Text('Trending')),
-                      color: Colors.redAccent,
-                    ),
-                  ),
-                  SizedBox(
-                    height: 50,
-                    width: 200,
-                    child: Card(
-                      child: Center(child: Text('Music')),
-                      color: Colors.green,
-                    ),
-                  )
-                ],
+              SizedBox(
+                height: 50,
+                width: 216,
+                child: Card(
+                  child: Center(child: Text('Trending')),
+                  color: Colors.redAccent,
+                ),
               ),
-              Row(
-                children: [
-                  SizedBox(
-                    height: 50,
-                    width: 200,
-                    child: Card(
-                      child: Center(child: Text('Gaming')),
-                      color: Colors.brown,
-                    ),
-                  ),
-                  SizedBox(
-                    height: 50,
-                    width: 200,
-                    child: Card(
-                      child: Center(child: Text('News')),
-                      color: Colors.blue,
-                    ),
-                  )
-                ],
+              SizedBox(
+                height: 50,
+                width: 216,
+                child: Card(
+                  child: Center(child: Text('Music')),
+                  color: Colors.green,
+                ),
+              )
+            ],
+          ),
+          Row(
+            children: [
+              SizedBox(
+                height: 50,
+                width: 216,
+                child: Card(
+                  child: Center(child: Text('Gaming')),
+                  color: Colors.brown,
+                ),
               ),
-              Row(
-                children: [
-                  SizedBox(
-                    height: 50,
-                    width: 200,
-                    child: Card(
-                      //color: Colors.blueAccent,
-                      child: Stack(
-                        children: <Widget>[
-                          Image.network(
-                            'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMbA_71JT0pXiE6puFp5bjgY8hlYxjbnQ_hw&usqp=CAU',
-                            fit: BoxFit.cover,
-                          ),
-                          Positioned(
-                              bottom: 0,
-                              left: 0,
-                              right: 0,
-                              child: Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Center(child: Text('Sports')),
-                              ))
-                        ],
+              SizedBox(
+                height: 50,
+                width: 216,
+                child: Card(
+                  child: Center(child: Text('News')),
+                  color: Colors.blue,
+                ),
+              )
+            ],
+          ),
+          Row(
+            children: [
+              SizedBox(
+                height: 50,
+                width: 216,
+                child: Card(
+                  color: Colors.blue,
+                  child: Container(
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        image: NetworkImage(
+                            'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSM75vk_jT0kJo_ULSJhRMb5xAk4v9WQqVM3w&usqp=CAU'),
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                    child: Center(
+                      child: Text(
+                        'Sports',
+                        style: TextStyle(
+                          fontSize: 15.0,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                        ),
                       ),
                     ),
                   ),
-                ],
+                ),
               ),
             ],
+          ),
+          SizedBox(
+            height: 10,
+          ),
+          Row(
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(left: 10),
+                child: Text('Trending Videos'),
+              )
+            ],
+          ),
+          ListView()
+        ],
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
+        items: [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home_outlined, color: Colors.black),
+            label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.explore, color: Colors.black),
+            label: 'Explore',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.add_circle_outline, color: Colors.black),
+            label: '',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.subscriptions_outlined, color: Colors.black),
+            label: 'Subscriptions',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.library_music_outlined, color: Colors.black),
+            label: 'Library',
           ),
         ],
       ),
