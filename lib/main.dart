@@ -40,7 +40,6 @@ class HomePage extends StatelessWidget {
         elevation: 3,
         leading: Image.asset('images/Youtube Icon.png'),
         actions: <Widget>[
-
           Padding(
             padding: const EdgeInsets.only(right: 10.0),
             child: GestureDetector(
@@ -83,67 +82,91 @@ class HomePage extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(right: 10.0),
             child: GestureDetector(
-              onTap: () {
-                /* Code Behaviour Here*/
-              },
-              child: CircleAvatar(
-                child: FittedBox(child: Image.asset('images/MiCard-pic.jpg')),
-              )
-            ),
+                onTap: () {
+                  /* Code Behaviour Here*/
+                },
+                child: CircleAvatar(
+                  child: FittedBox(child: Image.asset('images/MiCard-pic.jpg')),
+                )),
           ),
         ],
-
         backgroundColor: Colors.white,
       ),
       body: ListView(
         children: [
-          Container(
-            color: Colors.black12,
-            child: Column(
-              children: [
-                Row(
-                  children: [
-                    Card(
-                      child: Text('Trending'),
-                        color:  Colors.redAccent
+          Column(
+            children: [
+              Row(
+                children: [
+                  SizedBox(
+                    height: 50,
+                    width: 200,
+                    child: Card(
+                      child: Center(child: Text('Trending')),
+                      color: Colors.redAccent,
                     ),
-                    Card(
-                      child: Text('Music'),
-                        color:  Colors.redAccent
+                  ),
+                  SizedBox(
+                    height: 50,
+                    width: 200,
+                    child: Card(
+                      child: Center(child: Text('Music')),
+                      color: Colors.green,
                     ),
-                  ],
-                ),
-                Row(
-                  children: [
-                    Card(
-                      child: Text('Gaming'),
-                        color:  Colors.redAccent
+                  )
+                ],
+              ),
+              Row(
+                children: [
+                  SizedBox(
+                    height: 50,
+                    width: 200,
+                    child: Card(
+                      child: Center(child: Text('Gaming')),
+                      color: Colors.brown,
                     ),
-                    Card(
-                      child: Text('News'),
-                        color:  Colors.redAccent
+                  ),
+                  SizedBox(
+                    height: 50,
+                    width: 200,
+                    child: Card(
+                      child: Center(child: Text('News')),
+                      color: Colors.blue,
                     ),
-                  ],
-                ),
-                Row(
-                  children: [
-                    Card(
-
-                      child: ListTile(
-                        leading: Icon(Icons.sports, color: Colors.black12),
-                        title: Text('Sports',style: TextStyle(color: Colors.black12)),
-                      )
+                  )
+                ],
+              ),
+              Row(
+                children: [
+                  SizedBox(
+                    height: 50,
+                    width: 200,
+                    child: Card(
+                      //color: Colors.blueAccent,
+                      child: Stack(
+                        children: <Widget>[
+                          Image.network(
+                            'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMbA_71JT0pXiE6puFp5bjgY8hlYxjbnQ_hw&usqp=CAU',
+                            fit: BoxFit.cover,
+                          ),
+                          Positioned(
+                              bottom: 0,
+                              left: 0,
+                              right: 0,
+                              child: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Center(child: Text('Sports')),
+                              ))
+                        ],
+                      ),
                     ),
-
-                  ],
-                ),
-
-              ],
-            ),
+                  ),
+                ],
+              ),
+            ],
           ),
-
         ],
-      )
+      ),
     );
   }
 }
