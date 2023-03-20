@@ -14,15 +14,6 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'YouTube',
       theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // Try running your application with "flutter run". You'll see the
-        // application has a blue toolbar. Then, without quitting the app, try
-        // changing the primarySwatch below to Colors.green and then invoke
-        // "hot reload" (press "r" in the console where you ran "flutter run",
-        // or simply save your changes to "hot reload" in a Flutter IDE).
-        // Notice that the counter didn't reset back to zero; the application
-        // is not restarted.
         primarySwatch: Colors.blue,
       ),
       home: const HomePage(),
@@ -90,7 +81,7 @@ class _HomePageState extends State<HomePage> {
               onTap: () {
                 /* Code Behaviour Here*/
               },
-              child: CircleAvatar(
+              child: const CircleAvatar(
                 backgroundImage: AssetImage('images/MiCard-pic.jpg'),
                 backgroundColor: Colors.blue,
                 radius: 16.0,
@@ -103,45 +94,45 @@ class _HomePageState extends State<HomePage> {
       body: Column(
         //REMOVED LIST VIEW from here
         children: [
-          SizedBox(
+          const SizedBox(
             height: 8,
           ),
           Row(
-            children: [
+            children: const [
               SizedBox(
                 height: 50,
-                width: 216,
+                width: 180,
                 child: Card(
-                  child: Center(child: Text('Trending')),
                   color: Colors.redAccent,
+                  child: Center(child: Text('Trending')),
                 ),
               ),
               SizedBox(
                 height: 50,
-                width: 216,
+                width: 180,
                 child: Card(
-                  child: Center(child: Text('Music')),
                   color: Colors.green,
+                  child: Center(child: Text('Music')),
                 ),
               )
             ],
           ),
           Row(
-            children: [
+            children: const [
               SizedBox(
                 height: 50,
-                width: 216,
+                width: 180,
                 child: Card(
-                  child: Center(child: Text('Gaming')),
                   color: Colors.brown,
+                  child: Center(child: Text('Gaming')),
                 ),
               ),
               SizedBox(
                 height: 50,
-                width: 216,
+                width: 180,
                 child: Card(
-                  child: Center(child: Text('News')),
                   color: Colors.blue,
+                  child: Center(child: Text('News')),
                 ),
               )
             ],
@@ -150,25 +141,32 @@ class _HomePageState extends State<HomePage> {
             children: [
               SizedBox(
                 height: 50,
-                width: 216,
+                width: 180,
                 child: Card(
                   color: Colors.blue,
                   child: Container(
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                       image: DecorationImage(
                         image: NetworkImage(
                             'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSM75vk_jT0kJo_ULSJhRMb5xAk4v9WQqVM3w&usqp=CAU'),
                         fit: BoxFit.cover,
                       ),
                     ),
-                    child: Center(
-                      child: Text(
-                        'Sports',
-                        style: TextStyle(
-                          fontSize: 15.0,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white,
-                        ),
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Row(
+                        children: const [
+                          Icon(Icons.sports, color: Colors.white),
+                          SizedBox(width: 10),
+                          Text(
+                            'Sport',
+                            style: TextStyle(
+                              fontSize: 15.0,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                   ),
@@ -176,23 +174,23 @@ class _HomePageState extends State<HomePage> {
               ),
             ],
           ),
-          SizedBox(
+          const SizedBox(
             height: 10,
           ),
           Row(
-            children: [
+            children: const [
               Padding(
-                padding: const EdgeInsets.only(left: 10),
+                padding: EdgeInsets.only(left: 10),
                 child: Text('Trending Videos'),
               )
             ],
           ),
-          ListView()
+          // ListView()
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
-        items: [
+        items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.home_outlined, color: Colors.black),
             label: 'Home',
