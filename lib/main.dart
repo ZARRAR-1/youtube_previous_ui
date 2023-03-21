@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
   runApp(const MyApp());
 }
 
@@ -91,11 +94,12 @@ class _HomePageState extends State<HomePage> {
         ],
         backgroundColor: Colors.white,
       ),
-      body: Column(
+      body: ListView(
+        children:
         //REMOVED LIST VIEW from here
-        children: [
+        [
           const SizedBox(
-            height: 8,
+            height: 10,
           ),
           Row(
             children: const [
@@ -174,69 +178,124 @@ class _HomePageState extends State<HomePage> {
               ),
             ],
           ),
-          const SizedBox(
+
+          //Video thumbnails begun from here:
+          SizedBox(height: 10),
+          Container(
+            // decoration: BoxDecorati
+            color: Colors.white,
             height: 45,
-            width: 180,
-            child: Padding(
-              padding: EdgeInsets.only(left: 10),
-              child: Text('Trending Videos'),
+            width: double.infinity,
+            child: const Padding(
+              padding: EdgeInsets.all(10),
+              child: Text('Trending videos',
+                  style: TextStyle(fontWeight: FontWeight.bold)),
             ),
           ),
-          Column(
-            children: [
-              //1st COntainer:
-              Container(
-                child: Column(
-                  children: [
-                    Image.asset('images/img.png'),
-                    ListTile(
-                      leading: const CircleAvatar(
-                        backgroundImage: AssetImage('images/channel.png'),
-                        backgroundColor: Colors.grey,
-                      ),
-                      title: const Text(
+          Container(
+            color: Colors.white,
+
+            child: Column(
+              children: [
+                //1st COntainer:
+                Container(
+                  child: Column(
+                    children: [
+                      Image.asset('images/img.png',),
+                      ListTile(
+                        leading: const CircleAvatar(
+                          backgroundImage: AssetImage('images/channel.png'),
+                          backgroundColor: Colors.grey,
+                        ),
+                        title: const Text(
                           'Lecture-5 R.E Process Models & Other Models',
                           maxLines: 2,
-                          softWrap: true),
-                      subtitle: const Text('Booming Software Engineers'),
-                      trailing: IconButton(
-                        padding: const EdgeInsets.only(left: 25),
-                        onPressed: () {},
-                        icon: const Icon(Icons.more_vert, size: 20),
+                          softWrap: true,
+                          style: TextStyle(fontSize: 13, fontWeight: FontWeight
+                              .bold),),
+                        subtitle: const Text(
+                          'Booming Software Engineers . 14M views . 12 days ago',
+                          softWrap: false,
+                          style: TextStyle(fontSize: 10, fontWeight: FontWeight
+                              .bold),),
+                        trailing: IconButton(
+                          alignment: Alignment.topRight,
+                          padding: const EdgeInsets.fromLTRB(25, 0, 0, 25),
+                          onPressed: () {},
+                          icon: const Icon(Icons.more_vert, size: 20),
+                        ),
                       ),
-                    ),
-                  ],
+                      SizedBox(height: 17,),
+                    ],
+                  ),
                 ),
-              ),
-            ],
+
+                //2nd Container:
+                Container(
+                  child: Column(
+                    children: [
+                      Image.asset('images/img.png'),
+                      ListTile(
+                        leading: const CircleAvatar(
+                          backgroundImage: AssetImage('images/channel.png'),
+                          backgroundColor: Colors.grey,
+                        ),
+                        title: const Text(
+                          'Lecture-5 R.E Process Models & Other Models',
+                          maxLines: 2,
+                          softWrap: true,
+                          style: TextStyle(fontSize: 13, fontWeight: FontWeight
+                              .bold),),
+                        subtitle: const Text(
+                          'Booming Software Engineers . 14M views . 12 days ago',
+                          softWrap: false,
+                          style: TextStyle(fontSize: 10, fontWeight: FontWeight
+                              .bold),),
+                        trailing: IconButton(
+                          alignment: Alignment.topRight,
+                          padding: const EdgeInsets.fromLTRB(25, 0, 0, 25),
+                          onPressed: () {},
+                          icon: const Icon(Icons.more_vert, size: 20),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                SizedBox(height: 17,),
+              ],
+            ),
           ),
         ],
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        type: BottomNavigationBarType.fixed,
-        items: const [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home_outlined, color: Colors.black),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.explore, color: Colors.black),
-            label: 'Explore',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.add_circle_outline, color: Colors.black),
-            label: '',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.subscriptions_outlined, color: Colors.black),
-            label: 'Subscriptions',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.library_music_outlined, color: Colors.black),
-            label: 'Library',
-          ),
-        ],
-      ),
+
+
+    bottomNavigationBar: BottomNavigationBar(
+
+    type: BottomNavigationBarType.fixed,
+    items: const [
+    BottomNavigationBarItem(
+    icon: Icon(Icons.home_outlined, color: Colors.black,size: 20,),
+    label: 'Home',
+    ),
+    BottomNavigationBarItem(
+    icon: Icon(Icons.explore, color: Colors.black, size: 20),
+    label: 'Explore',
+    ),
+    BottomNavigationBarItem(
+    icon: Icon(Icons.add_circle_outline, color: Colors.black, size: 35),
+    label: '',
+    ),
+    BottomNavigationBarItem(
+    icon: Icon(Icons.subscriptions_outlined, color: Colors.black, size: 20),
+    label: 'Subscriptions',
+    ),
+    BottomNavigationBarItem(
+    icon: Icon(Icons.library_music_outlined, color: Colors.black, size: 20),
+    label: 'Library',
+    ),
+    ],
+    )
+    ,
     );
   }
 }
