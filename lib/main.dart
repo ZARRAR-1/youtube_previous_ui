@@ -83,7 +83,7 @@ class _HomePageState extends State<HomePage> {
               },
               child: const CircleAvatar(
                 backgroundImage: AssetImage('images/MiCard-pic.jpg'),
-                backgroundColor: Colors.blue,
+                backgroundColor: Colors.grey,
                 radius: 16.0,
               ),
             ),
@@ -175,17 +175,41 @@ class _HomePageState extends State<HomePage> {
             ],
           ),
           const SizedBox(
-            height: 10,
+            height: 45,
+            width: 180,
+            child: Padding(
+              padding: EdgeInsets.only(left: 10),
+              child: Text('Trending Videos'),
+            ),
           ),
-          Row(
-            children: const [
-              Padding(
-                padding: EdgeInsets.only(left: 10),
-                child: Text('Trending Videos'),
-              )
+          Column(
+            children: [
+              //1st COntainer:
+              Container(
+                child: Column(
+                  children: [
+                    Image.asset('images/img.png'),
+                    ListTile(
+                      leading: const CircleAvatar(
+                        backgroundImage: AssetImage('images/channel.png'),
+                        backgroundColor: Colors.grey,
+                      ),
+                      title: const Text(
+                          'Lecture-5 R.E Process Models & Other Models',
+                          maxLines: 2,
+                          softWrap: true),
+                      subtitle: const Text('Booming Software Engineers'),
+                      trailing: IconButton(
+                        padding: const EdgeInsets.only(left: 25),
+                        onPressed: () {},
+                        icon: const Icon(Icons.more_vert, size: 20),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
             ],
           ),
-          // ListView()
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
