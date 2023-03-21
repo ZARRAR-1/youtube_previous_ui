@@ -35,9 +35,16 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // backgroundColor: Color.,
       appBar: AppBar(
         elevation: 3,
-        leading: Image.asset('images/Youtube Icon.png'),
+        leading: Container(
+          height: 10,
+          width: 20,
+          child: Image.asset(
+            'images/Youtube Icon.png',
+          ),
+        ),
         actions: <Widget>[
           Padding(
             padding: const EdgeInsets.only(right: 10.0),
@@ -95,66 +102,180 @@ class _HomePageState extends State<HomePage> {
         backgroundColor: Colors.white,
       ),
       body: ListView(
-        children:
-        //REMOVED LIST VIEW from here
-        [
+        children: [
           const SizedBox(
             height: 10,
           ),
-          Row(
-            children: const [
-              SizedBox(
-                height: 50,
-                width: 180,
-                child: Card(
-                  color: Colors.redAccent,
-                  child: Center(child: Text('Trending')),
-                ),
-              ),
-              SizedBox(
-                height: 50,
-                width: 180,
-                child: Card(
-                  color: Colors.green,
-                  child: Center(child: Text('Music')),
-                ),
-              )
-            ],
-          ),
-          Row(
-            children: const [
-              SizedBox(
-                height: 50,
-                width: 180,
-                child: Card(
-                  color: Colors.brown,
-                  child: Center(child: Text('Gaming')),
-                ),
-              ),
-              SizedBox(
-                height: 50,
-                width: 180,
-                child: Card(
-                  color: Colors.blue,
-                  child: Center(child: Text('News')),
-                ),
-              )
-            ],
-          ),
+          //Row:1
           Row(
             children: [
               SizedBox(
                 height: 50,
                 width: 180,
                 child: Card(
-                  color: Colors.blue,
+                  elevation: 0,
                   child: Container(
-                    decoration: const BoxDecoration(
-                      image: DecorationImage(
+                    decoration: BoxDecoration(
+                      image: const DecorationImage(
+                        image: NetworkImage(
+                            'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFgBJbGqs7B3WRKBNZW7JrYedXy0iek3G_5w&usqp=CAU'),
+                        fit: BoxFit.cover,
+                      ),
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Row(
+                        children: const [
+                          Icon(Icons.trending_up, color: Colors.white),
+                          SizedBox(width: 10),
+                          Text(
+                            'Trending',
+                            style: TextStyle(
+                              fontSize: 15.0,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 50,
+                width: 180,
+                child: Card(
+                  elevation: 0,
+                  // color: Colors.blue,
+                  child: Container(
+                    decoration: BoxDecoration(
+                      image: const DecorationImage(
+                        image: NetworkImage(
+                            'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuJf8Rxl04E4mTYxR42piOBkf6MipU97-RdA&usqp=CAU'),
+                        // 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSM75vk_jT0kJo_ULSJhRMb5xAk4v9WQqVM3w&usqp=CAU'),
+                        fit: BoxFit.cover,
+                      ),
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Row(
+                        children: const [
+                          Icon(Icons.music_note_outlined, color: Colors.white),
+                          SizedBox(width: 10),
+                          Text(
+                            'Music',
+                            style: TextStyle(
+                              fontSize: 15.0,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+          //Row:2
+          Row(
+            children: [
+              SizedBox(
+                height: 50,
+                width: 180,
+                child: Card(
+                  elevation: 0,
+                  // color: Colors.blue,
+                  child: Container(
+                    decoration: BoxDecoration(
+                      image: const DecorationImage(
+                        image: AssetImage('images/img_1.png'),
+                        // NetworkImage(
+                        //     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSM75vk_jT0kJo_ULSJhRMb5xAk4v9WQqVM3w&usqp=CAU'),
+                        fit: BoxFit.cover,
+                      ),
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Row(
+                        children: const [
+                          Icon(Icons.control_camera_outlined,
+                              color: Colors.white),
+                          SizedBox(width: 10),
+                          Text(
+                            'Gaming',
+                            style: TextStyle(
+                              fontSize: 15.0,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 50,
+                width: 180,
+                child: Card(
+                  elevation: 0,
+                  // color: Colors.blue,
+                  child: Container(
+                    decoration: BoxDecoration(
+                      image: const DecorationImage(
+                        image: NetworkImage(
+                            'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSbFgD8my1AXDRIaK9EplJmSZOsQv8qaOniQ&usqp=CAU'),
+                        // 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSM75vk_jT0kJo_ULSJhRMb5xAk4v9WQqVM3w&usqp=CAU'),
+                        fit: BoxFit.cover,
+                      ),
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Row(
+                        children: const [
+                          Icon(Icons.newspaper_rounded, color: Colors.white),
+                          SizedBox(width: 10),
+                          Text(
+                            'News',
+                            style: TextStyle(
+                              fontSize: 15.0,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+          //Row:3
+          Row(
+            children: [
+              SizedBox(
+                height: 50,
+                width: 180,
+                child: Card(
+                  elevation: 0,
+                  // color: Colors.blue,
+                  child: Container(
+                    decoration: BoxDecoration(
+                      image: const DecorationImage(
                         image: NetworkImage(
                             'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSM75vk_jT0kJo_ULSJhRMb5xAk4v9WQqVM3w&usqp=CAU'),
                         fit: BoxFit.cover,
                       ),
+                      borderRadius: BorderRadius.circular(8),
                     ),
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
@@ -180,7 +301,7 @@ class _HomePageState extends State<HomePage> {
           ),
 
           //Video thumbnails begun from here:
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
           Container(
             // decoration: BoxDecorati
             color: Colors.white,
@@ -188,20 +309,23 @@ class _HomePageState extends State<HomePage> {
             width: double.infinity,
             child: const Padding(
               padding: EdgeInsets.all(10),
-              child: Text('Trending videos',
-                  style: TextStyle(fontWeight: FontWeight.bold)),
+              child: Text(
+                'Trending videos',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
             ),
           ),
           Container(
             color: Colors.white,
-
             child: Column(
               children: [
                 //1st COntainer:
                 Container(
                   child: Column(
                     children: [
-                      Image.asset('images/img.png',),
+                      Image.asset('images/thumbnail.jpg'),
                       ListTile(
                         leading: const CircleAvatar(
                           backgroundImage: AssetImage('images/channel.png'),
@@ -211,13 +335,15 @@ class _HomePageState extends State<HomePage> {
                           'Lecture-5 R.E Process Models & Other Models',
                           maxLines: 2,
                           softWrap: true,
-                          style: TextStyle(fontSize: 13, fontWeight: FontWeight
-                              .bold),),
+                          style: TextStyle(
+                              fontSize: 13, fontWeight: FontWeight.bold),
+                        ),
                         subtitle: const Text(
                           'Booming Software Engineers . 14M views . 12 days ago',
                           softWrap: false,
-                          style: TextStyle(fontSize: 10, fontWeight: FontWeight
-                              .bold),),
+                          style: TextStyle(
+                              fontSize: 10, fontWeight: FontWeight.bold),
+                        ),
                         trailing: IconButton(
                           alignment: Alignment.topRight,
                           padding: const EdgeInsets.fromLTRB(25, 0, 0, 25),
@@ -225,7 +351,9 @@ class _HomePageState extends State<HomePage> {
                           icon: const Icon(Icons.more_vert, size: 20),
                         ),
                       ),
-                      SizedBox(height: 17,),
+                      const SizedBox(
+                        height: 17,
+                      ),
                     ],
                   ),
                 ),
@@ -234,23 +362,25 @@ class _HomePageState extends State<HomePage> {
                 Container(
                   child: Column(
                     children: [
-                      Image.asset('images/img.png'),
+                      Image.asset('images/thumbnail.jpg'),
                       ListTile(
                         leading: const CircleAvatar(
                           backgroundImage: AssetImage('images/channel.png'),
                           backgroundColor: Colors.grey,
                         ),
                         title: const Text(
-                          'Lecture-5 R.E Process Models & Other Models',
+                          'Lecture-4 R.E Process Models & Other Models',
                           maxLines: 2,
                           softWrap: true,
-                          style: TextStyle(fontSize: 13, fontWeight: FontWeight
-                              .bold),),
+                          style: TextStyle(
+                              fontSize: 13, fontWeight: FontWeight.bold),
+                        ),
                         subtitle: const Text(
                           'Booming Software Engineers . 14M views . 12 days ago',
                           softWrap: false,
-                          style: TextStyle(fontSize: 10, fontWeight: FontWeight
-                              .bold),),
+                          style: TextStyle(
+                              fontSize: 10, fontWeight: FontWeight.bold),
+                        ),
                         trailing: IconButton(
                           alignment: Alignment.topRight,
                           padding: const EdgeInsets.fromLTRB(25, 0, 0, 25),
@@ -261,41 +391,45 @@ class _HomePageState extends State<HomePage> {
                     ],
                   ),
                 ),
-                SizedBox(height: 17,),
+                const SizedBox(
+                  height: 17,
+                ),
               ],
             ),
           ),
         ],
       ),
-
-
-    bottomNavigationBar: BottomNavigationBar(
-
-    type: BottomNavigationBarType.fixed,
-    items: const [
-    BottomNavigationBarItem(
-    icon: Icon(Icons.home_outlined, color: Colors.black,size: 20,),
-    label: 'Home',
-    ),
-    BottomNavigationBarItem(
-    icon: Icon(Icons.explore, color: Colors.black, size: 20),
-    label: 'Explore',
-    ),
-    BottomNavigationBarItem(
-    icon: Icon(Icons.add_circle_outline, color: Colors.black, size: 35),
-    label: '',
-    ),
-    BottomNavigationBarItem(
-    icon: Icon(Icons.subscriptions_outlined, color: Colors.black, size: 20),
-    label: 'Subscriptions',
-    ),
-    BottomNavigationBarItem(
-    icon: Icon(Icons.library_music_outlined, color: Colors.black, size: 20),
-    label: 'Library',
-    ),
-    ],
-    )
-    ,
+      bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
+        items: const [
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.home_outlined,
+              color: Colors.black,
+              size: 20,
+            ),
+            label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.explore, color: Colors.black, size: 20),
+            label: 'Explore',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.add_circle_outline, color: Colors.black, size: 35),
+            label: '',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.subscriptions_outlined,
+                color: Colors.black, size: 20),
+            label: 'Subscriptions',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.library_music_outlined,
+                color: Colors.black, size: 20),
+            label: 'Library',
+          ),
+        ],
+      ),
     );
   }
 }
