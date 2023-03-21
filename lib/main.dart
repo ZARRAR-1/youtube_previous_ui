@@ -401,6 +401,7 @@ class _HomePageState extends State<HomePage> {
       ),
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
+        selectedItemColor: Colors.grey,
         items: const [
           BottomNavigationBarItem(
             icon: Icon(
