@@ -35,6 +35,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // backgroundColor:,
       appBar: AppBar(
         leadingWidth: 100,
         elevation: 3,
@@ -118,6 +119,7 @@ class _HomePageState extends State<HomePage> {
                         fit: BoxFit.cover,
                       ),
                       borderRadius: BorderRadius.circular(8),
+
                     ),
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
@@ -299,7 +301,7 @@ class _HomePageState extends State<HomePage> {
           //Video thumbnails begun from here:
           const SizedBox(height: 10),
           Container(
-            // decoration: BoxDecorati
+            // decoration: BoxDecoration()
             color: Colors.white,
             height: 45,
             width: double.infinity,
