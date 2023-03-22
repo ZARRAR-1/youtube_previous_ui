@@ -35,15 +35,11 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // backgroundColor: Color.,
       appBar: AppBar(
+        leadingWidth: 100,
         elevation: 3,
-        leading: Container(
-          height: 10,
-          width: 20,
-          child: Image.asset(
-            'images/Youtube Icon.png',
-          ),
+        leading: Image.asset(
+          'images/Youtube Icon.jpg', width: 56,
         ),
         actions: <Widget>[
           Padding(
@@ -92,7 +88,7 @@ class _HomePageState extends State<HomePage> {
                 /* Code Behaviour Here*/
               },
               child: const CircleAvatar(
-                backgroundImage: AssetImage('images/MiCard-pic.jpg'),
+                backgroundImage: AssetImage('images/MiCard-pic.jpg', ),
                 backgroundColor: Colors.grey,
                 radius: 16.0,
               ),
@@ -327,6 +323,8 @@ class _HomePageState extends State<HomePage> {
                     children: [
                       Image.asset('images/thumbnail.jpg'),
                       ListTile(
+                        dense: false,
+
                         leading: const CircleAvatar(
                           backgroundImage: AssetImage('images/channel.png'),
                           backgroundColor: Colors.grey,
@@ -394,6 +392,8 @@ class _HomePageState extends State<HomePage> {
                 const SizedBox(
                   height: 17,
                 ),
+
+
               ],
             ),
           ),
