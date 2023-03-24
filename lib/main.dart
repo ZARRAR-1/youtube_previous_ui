@@ -39,8 +39,16 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         leadingWidth: 100,
         elevation: 3,
-        leading: Image.asset(
-          'images/Youtube Icon.jpg', width: 56,
+        leading: Row(
+          children: [
+            const SizedBox(
+              width: 10,
+            ),
+            Image.asset(
+              'images/Youtube Icon.jpg',
+              width: 90,
+            ),
+          ],
         ),
         actions: <Widget>[
           Padding(
@@ -88,10 +96,19 @@ class _HomePageState extends State<HomePage> {
               onTap: () {
                 /* Code Behaviour Here*/
               },
-              child: const CircleAvatar(
-                backgroundImage: AssetImage('images/MiCard-pic.jpg', ),
+              child: CircleAvatar(
+                // backgroundImage: AssetImage('images/MiCard-pic.jpg', ),
                 backgroundColor: Colors.grey,
                 radius: 16.0,
+                child: Container(
+                  decoration: const BoxDecoration(
+                      shape: BoxShape.circle,
+                      image: DecorationImage(
+                        fit: BoxFit.contain,
+                          image: AssetImage(
+                        'images/MiCard-pic.jpg',
+                      ),),),
+                ),
               ),
             ),
           ),
@@ -119,7 +136,6 @@ class _HomePageState extends State<HomePage> {
                         fit: BoxFit.cover,
                       ),
                       borderRadius: BorderRadius.circular(8),
-
                     ),
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
@@ -326,7 +342,6 @@ class _HomePageState extends State<HomePage> {
                       Image.asset('images/thumbnail.jpg'),
                       ListTile(
                         dense: false,
-
                         leading: const CircleAvatar(
                           backgroundImage: AssetImage('images/channel.png'),
                           backgroundColor: Colors.grey,
@@ -394,8 +409,6 @@ class _HomePageState extends State<HomePage> {
                 const SizedBox(
                   height: 17,
                 ),
-
-
               ],
             ),
           ),
