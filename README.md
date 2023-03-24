@@ -1,6 +1,7 @@
 # youtube_previous_ui
 
-A new Flutter project.
+Youtube Homescreen layout MockUp made in FLUTTER, as part of course assignment from the course of "Software For Mobile Devices".
+Made by k191095 Ma'arij Abdul Qadir, k191056 Anish Rajput, k191069 Abeer Hussain.
 
 ## Getting Started
 
